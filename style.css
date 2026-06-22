@@ -1,0 +1,132 @@
+:root {
+    --bg: #f0f2f5;
+    --calc-bg: #ffffff;
+    --display-bg: #e9eef3;
+    --btn-bg: #ffffff;
+    --btn-hover: #e4e6eb;
+    --operator-bg: #ff9500;
+    --operator-hover: #e68600;
+    --text: #1c1e21;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg: #18191a;
+    --calc-bg: #242526;
+    --display-bg: #3a3b3c;
+    --btn-bg: #3a3b3c;
+    --btn-hover: #4e4f50;
+    --operator-bg: #ff9500;
+    --operator-hover: #e68600;
+    --text: #e4e6eb;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+    transition: 0.3s;
+}
+
+.calculator {
+    width: 340px;
+    background: var(--calc-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.history {
+    min-height: 20px;
+    text-align: right;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: var(--display-bg);
+    border-radius: 10px;
+    text-align: right;
+    padding: 10px 15px;
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.scientific-row, .buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.scientific-row {
+    margin-bottom: 10px;
+}
+
+button {
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: var(--btn-bg);
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--btn-hover);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: var(--operator-bg);
+    color: white;
+}
+
+.operator:hover {
+    background: var(--operator-hover);
+}
+
+.operator-equal {
+    background: #34c759;
+    color: white;
+}
+
+.operator-ac, .operator-c {
+    background: #ff3b30;
+    color: white;
+}
